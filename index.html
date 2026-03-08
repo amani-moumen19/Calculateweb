@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GPA Calculator with jQuery & Bootstrap</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">GPA Calculator <small class="text-muted">with jQuery & Bootstrap</small></h1>
+
+        <!-- Result container for AJAX response -->
+        <div id="resultContainer"></div>
+
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">>>>>>>>Enter Course Details</h2>
+            </div>
+            <div class="card-body">
+                <form id="gpaForm">
+                    <div id="courses">
+                        <!-- Initial course row -->
+                        <div class="course-row form-row mb-3">
+                            <div class="col-md-5">
+                                <input type="text" name="course[]" class="form-control" placeholder="Course name" required>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="number" name="credits[]" class="form-control" placeholder="Credits" min="0.5" step="0.5" required>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="grade[]" class="form-control">
+                                    <option value="4.0">A (4.0) - Excellent</option>
+                                    <option value="3.0">B (3.0) - Good</option>
+                                    <option value="2.0">C (2.0) - Average</option>
+                                    <option value="1.0">D (1.0) - Below Average</option>
+                                    <option value="0.0">F (0.0) - Fail</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-danger remove-row" style="display: none;">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row mt-3">
+                        <div class="col">
+                            <button type="button" id="addCourse" class="btn btn-success">
+                                <i class="glyphicon glyphicon-plus"></i> + Add Course
+                            </button>
+                            <button type="submit" class="btn btn-primary ml-2">
+                                Calculate GPA
+                            </button>
+                            <button type="reset" class="btn btn-secondary ml-2">
+                                Reset Form
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-4 text-muted">
+            <small>Lab 2 - GPA Calculator with jQuery and Bootstrap</small>
+        </div>
+    </div>
+</body>
+
+</html>
